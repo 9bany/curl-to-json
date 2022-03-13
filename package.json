@@ -1,11 +1,16 @@
 {
-  "name": "curl-to-json",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@bany/curl-to-json",
+  "version": "1.0.1",
+  "description": "Convert curl format to json",
   "main": "pare-json.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "curl-to-json",
+    "curl-convertor",
+    "curl-convertor-to-json"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/9bany/curl-to-json.git"
