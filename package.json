@@ -16,7 +16,7 @@
     "url": "git+https://github.com/9bany/curl-to-json.git"
   },
   "author": "rony",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/9bany/curl-to-json/issues"
   },
