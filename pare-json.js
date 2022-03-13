@@ -19,7 +19,13 @@ module.exports = exports.default = function(s) {
   args.forEach(function(arg){
     switch (true) {
       case isURL(arg):
-        out.url = arg
+        let url = new URL(arg);
+        out.origin = url.origin
+        out.url = url.toString();
+        
+        let params = new URLSearchParams(url.search);
+        
+        out.params = parseParamsField(params.toString());
         break;
       case arg == '-A' || arg == '--user-agent':
         state = 'user-agent'
@@ -115,6 +121,23 @@ function rewrite(args) {
 
 function parseField(s) {
   return s.split(/: (.+)/)
+}
+
+/**
+ * Parse params field.
+ * @param {s: string} 
+ * @returns object
+ */
+
+function parseParamsField(s) {
+  let object = {}
+  const allParamsArr = s.split(/&/)
+  allParamsArr.forEach(element => {
+    const field = element.split(/=/)
+    object[field[0]] = field[1]
+  })
+
+  return object
 }
 
 /**

@@ -1,6 +1,6 @@
 const parse = require('./pare-json');
 
-var out = parse(`curl -X --request GET 'localhost:3001/search?search=react&asdfa=asfdaf' \
+var out = parse(`curl -X --request GET 'http://localhost:3001/search?search=react&asdfa=asfdaf' \
 --header 'xapi-key: 21432139847290402402190' \
 --header 'Content-Type: text/html' \
 --data-raw '{
