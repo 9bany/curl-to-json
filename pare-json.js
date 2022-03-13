@@ -20,11 +20,9 @@ module.exports = exports.default = function(s) {
     switch (true) {
       case isURL(arg):
         let url = new URL(arg);
-        out.origin = url.origin
         out.url = url.toString();
-        
+        out.origin = url.origin
         let params = new URLSearchParams(url.search);
-        
         out.params = parseParamsField(params.toString());
         break;
       case arg == '-A' || arg == '--user-agent':
