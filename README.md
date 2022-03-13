@@ -5,6 +5,14 @@
 npm i @bany/curl-to-json
 ```
 ## Usage
+```
+```js
+const parse = require('@bany/curl-to-json');
+
+var out = parse(`your_curl`);
+
+```
+## Example
 ```js
 const parse = require('@bany/curl-to-json');
 
