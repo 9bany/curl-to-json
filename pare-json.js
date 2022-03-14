@@ -124,10 +124,11 @@ function parseField(s) {
 /**
  * Parse params field.
  * @param {s: string} 
- * @returns object
+ * @returns object | null
  */
 
 function parseParamsField(s) {
+  if(s === "") return null;
   let object = {}
   const allParamsArr = s.split(/&/)
   allParamsArr.forEach(element => {
