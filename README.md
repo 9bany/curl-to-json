@@ -25,6 +25,7 @@ var out = parse(`curl -X --request GET 'http://localhost:3001/search?search=reac
 }'`);
 
 console.log(out)
+```
 /**
  * OUTPUT:
  {
