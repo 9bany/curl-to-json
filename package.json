@@ -1,6 +1,6 @@
 {
   "name": "@bany/curl-to-json",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Convert curl format to json",
   "main": "pare-json.js",
   "scripts": {
