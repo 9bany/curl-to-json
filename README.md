@@ -5,7 +5,7 @@
 npm i @bany/curl-to-json
 ```
 ## Usage
-```
+
 ```js
 const parse = require('@bany/curl-to-json');
 
@@ -25,7 +25,7 @@ var out = parse(`curl -X --request GET 'http://localhost:3001/search?search=reac
 }'`);
 
 console.log(out)
-```
+
 /**
  * OUTPUT:
  {
