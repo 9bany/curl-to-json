@@ -1,5 +1,14 @@
 # curl-to-json
 
+## Feature
+- Mapping curl string to json
+- Support mapping header, params, body-raw
+## TODO
+Mapping list case
+- [ ] Form -F, --form
+- [ ] Binary data --data-binary
+- [ ] Urlencode data --data-urlencode
+- [ ] Range -r, --range
 ## Install
 ```
 npm i @bany/curl-to-json
