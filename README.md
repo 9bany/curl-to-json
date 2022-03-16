@@ -1,8 +1,8 @@
 # curl-to-json
 
 ## Feature
-- Mapping curl string to json
-- Support mapping header, params, body-raw
+- [X] Mapping curl string to json
+- [X] Support mapping header, params, body-raw
 - [X] Form -F, --form
 - [X] Binary data --data-binary
 - [X] Urlencode data --data-urlencode
