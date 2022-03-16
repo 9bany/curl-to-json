@@ -1,9 +1,6 @@
 const words = require('shellwords')
 const dJSON = require('dirty-json');
 
-// TODO -F, --form
-// TODO --data-binary
-// TODO --data-urlencode
 // TODO -r, --range
 
 /**
@@ -13,7 +10,7 @@ const dJSON = require('dirty-json');
 module.exports = exports.default = function(s) {
   if (0 != s.indexOf('curl ')) return
   var args = rewrite(words.split(s))
-  var out = { method: 'GET', header: {} }
+  var out = { method: 'GET', header: {}, form: {}, data_urlencode: {} }
   var state = ''
 
   args.forEach(function(arg){
@@ -29,7 +26,15 @@ module.exports = exports.default = function(s) {
       case arg == '-A' || arg == '--user-agent':
         state = 'user-agent'
         break;
-
+      case arg == '--data-urlencode':
+        state = 'data.urlencode'
+        break;
+      case arg == '--data-binary':
+        state = 'data.binary'
+        break;
+      case arg == '-F' || arg == '--form':
+        state = 'form'
+        break;
       case arg == '-H' || arg == '--header':
         state = 'header'
         break;
@@ -89,6 +94,18 @@ module.exports = exports.default = function(s) {
             out.header['Set-Cookie'] = arg
             state = ''
             break;
+          case 'form':
+            var field = parseFromField(arg)
+            out.form[field[0]] = field[1].substring(1, field[1].length - 1);
+            state = ''
+            break;
+          case 'data.binary':
+            out.binary_data = arg
+            break;
+          case 'data.urlencode':
+            var field = parseDataUrlencodeField(arg)
+            out.data_urlencode[field[0]] = field[1]
+            break;
         }
         break;
     }
@@ -128,6 +145,16 @@ function parseField(s) {
  * @returns object | null
  */
 
+ function parseDataUrlencodeField(s) {
+  return s.split(/=/)
+}
+
+/**
+ * Parse params field.
+ * @param {s: string} 
+ * @returns object | null
+ */
+
 function parseParamsField(s) {
   if(s === "") return null;
   let object = {}
@@ -138,6 +165,16 @@ function parseParamsField(s) {
   })
 
   return object
+}
+
+/**
+ * Parse params field.
+ * @param {arg: string} 
+ * @returns object | null
+ */
+
+function parseFromField(arg) {
+  return arg.split(/=/)
 }
 
 /**

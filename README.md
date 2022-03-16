@@ -3,11 +3,11 @@
 ## Feature
 - Mapping curl string to json
 - Support mapping header, params, body-raw
+- [X] Form -F, --form
+- [X] Binary data --data-binary
+- [X] Urlencode data --data-urlencode
 ## TODO
 Mapping list case
-- [ ] Form -F, --form
-- [ ] Binary data --data-binary
-- [ ] Urlencode data --data-urlencode
 - [ ] Range -r, --range
 ## Install
 ```
