@@ -13,7 +13,7 @@ const dJSON = require('dirty-json');
 module.exports = exports.default = function(s) {
   if (0 != s.indexOf('curl ')) return
   var args = rewrite(words.split(s))
-  var out = { method: 'GET', header: {}, form: {} }
+  var out = { method: 'GET', header: {}, form: {}, data_urlencode: {} }
   var state = ''
 
   args.forEach(function(arg){
@@ -28,6 +28,9 @@ module.exports = exports.default = function(s) {
         break;
       case arg == '-A' || arg == '--user-agent':
         state = 'user-agent'
+        break;
+      case arg == '--data-urlencode':
+        state = 'data.urlencode'
         break;
       case arg == '--data-binary':
         state = 'data.binary'
@@ -101,6 +104,11 @@ module.exports = exports.default = function(s) {
             break;
           case 'data.binary':
             out.binary_data = arg
+            break;
+          case 'data.urlencode':
+            var field = parseDataUrlencodeField(arg)
+            out.data_urlencode[field[0]] = field[1]
+            break;
         }
         break;
     }
@@ -132,6 +140,16 @@ function rewrite(args) {
 
 function parseField(s) {
   return s.split(/: (.+)/)
+}
+
+/**
+ * Parse params field.
+ * @param {s: string} 
+ * @returns object | null
+ */
+
+ function parseDataUrlencodeField(s) {
+  return s.split(/=/)
 }
 
 /**
