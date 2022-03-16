@@ -29,7 +29,9 @@ module.exports = exports.default = function(s) {
       case arg == '-A' || arg == '--user-agent':
         state = 'user-agent'
         break;
-
+      case arg == '--data-binary':
+        state = 'data.binary'
+        break;
       case arg == '-F' || arg == '--form':
         state = 'form'
         break;
@@ -97,6 +99,8 @@ module.exports = exports.default = function(s) {
             out.form[field[0]] = field[1].substring(1, field[1].length - 1);
             state = ''
             break;
+          case 'data.binary':
+            out.binary_data = arg
         }
         break;
     }
