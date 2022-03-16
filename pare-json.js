@@ -1,9 +1,6 @@
 const words = require('shellwords')
 const dJSON = require('dirty-json');
 
-// TODO -F, --form
-// TODO --data-binary
-// TODO --data-urlencode
 // TODO -r, --range
 
 /**
