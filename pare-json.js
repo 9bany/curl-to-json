@@ -13,7 +13,7 @@ const dJSON = require('dirty-json');
 module.exports = exports.default = function(s) {
   if (0 != s.indexOf('curl ')) return
   var args = rewrite(words.split(s))
-  var out = { method: 'GET', header: {} }
+  var out = { method: 'GET', header: {}, form: {} }
   var state = ''
 
   args.forEach(function(arg){
@@ -30,6 +30,9 @@ module.exports = exports.default = function(s) {
         state = 'user-agent'
         break;
 
+      case arg == '-F' || arg == '--form':
+        state = 'form'
+        break;
       case arg == '-H' || arg == '--header':
         state = 'header'
         break;
@@ -89,6 +92,11 @@ module.exports = exports.default = function(s) {
             out.header['Set-Cookie'] = arg
             state = ''
             break;
+          case 'form':
+            var field = parseFromField(arg)
+            out.form[field[0]] = field[1].substring(1, field[1].length - 1);
+            state = ''
+            break;
         }
         break;
     }
@@ -138,6 +146,16 @@ function parseParamsField(s) {
   })
 
   return object
+}
+
+/**
+ * Parse params field.
+ * @param {arg: string} 
+ * @returns object | null
+ */
+
+function parseFromField(arg) {
+  return arg.split(/=/)
 }
 
 /**
