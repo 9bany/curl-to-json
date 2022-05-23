@@ -15,9 +15,9 @@ module.exports = [
     },
     {
         name: 'data',
-        alias: ['d', 'data'],
+        alias: ['d', 'data', 'data-raw'],
         description: '<data> Send specified data in POST request. Details provided below.',
-        convertor: null,
+        convertor: convertor.body,
     },
     /*-f, --fail Fail silently (don't output HTML error form if returned).*/
     {
