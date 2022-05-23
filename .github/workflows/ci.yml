@@ -26,17 +26,4 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm test
-  automerge:
-    runs-on: ubuntu-latest
-    needs: 
-      - test
-    steps:
-      - name: automerge
-        uses: reitermarkus/automerge@v2
-        with:
-          token: ${{ secrets.AUTO_MERGE }}
-          merge-method: rebase
-          do-not-merge-labels: never-merge
-          required-labels: automerge
-          pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: true
+  
