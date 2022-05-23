@@ -1,14 +1,5 @@
 # curl-to-json
 
-## Feature
-- Mapping curl string to json
-- Support mapping header, params, body-raw
-- [X] Form -F, --form
-- [X] Binary data --data-binary
-- [X] Urlencode data --data-urlencode
-## TODO
-Mapping list case
-- [ ] Range -r, --range
 ## Install
 ```
 npm i @bany/curl-to-json
@@ -25,7 +16,7 @@ var out = parse(`your_curl`);
 ```js
 const parse = require('@bany/curl-to-json');
 
-var out = parse(`curl -X --request GET 'http://localhost:3001/search?search=react&asdfa=asfdaf' \
+var out = parse(`curl -X GET 'http://localhost:3001/search?search=react&asdfa=asfdaf' \
 --header 'xapi-key: 21432139847290402402190' \
 --header 'Content-Type: text/html' \
 --data-raw '{
