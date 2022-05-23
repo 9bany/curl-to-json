@@ -4,7 +4,7 @@
   "description": "Convert curl format to json",
   "main": "pare-json.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "curl-to-json",
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/9bany/curl-to-json#readme",
   "dependencies": {
-    "dirty-json": "^0.9.2",
-    "shellwords": "^1.0.1"
+    "mocha": "^10.0.0",
+    "yargs": "^17.5.1"
   }
 }

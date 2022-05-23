@@ -1,0 +1,11 @@
+[
+    {
+        "name": "multiple headers",
+        "curl": "curl --location -X GET -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept-Encoding: something' 'https://example.com/posts'"
+    },
+    {
+        "name": "a headers",
+        "curl": "curl --location -X GET -H 'Content-Type: application/x-www-form-urlencoded' 'https://example.com/posts'"
+    }
+    
+]
