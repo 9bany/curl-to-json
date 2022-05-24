@@ -2,6 +2,12 @@ const convertor = require("./convertor");
 
 module.exports = [
     {
+        name: 'url',
+        alias: ['url', 'curl'],
+        description: 'Url request',
+        convertor: null,
+    },
+    {
         name: 'cookie',
         alias: ['b', 'cookie'],
         description: '<name=data> Supply cookie with request. If no =, then specifies the cookie file to use (see -c).',
