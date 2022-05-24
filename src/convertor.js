@@ -17,6 +17,18 @@ function pareString(s, pareCallBack = parseField) {
     return result
 }
 
+function parseParamsField(s) {
+	if (s === "") return null;
+	let object = {}
+	const allParamsArr = s.split(/&/)
+	allParamsArr.forEach(element => {
+		const field = element.split(/=/)
+		object[field[0]] = field[1]
+	})
+
+	return object
+}
+
 module.exports = {
     header: (data) => {
         
@@ -37,7 +49,16 @@ module.exports = {
     body: (data) => {
         
         if ((typeof data) === "string") {
-            return JSON.parse(data)
+            try {
+                return JSON.parse(data)
+            } catch {
+                try {
+                    return parseParamsField(data)
+                } catch {
+                    return data
+                }
+            }
+            
         } else {
             let ouput = {}
             data.forEach(element => {
@@ -48,5 +69,6 @@ module.exports = {
             });
             return ouput
         }
-    }
+    },
+    parseParamsField: parseParamsField,
 }
