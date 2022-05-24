@@ -21,7 +21,7 @@ module.exports = [
     },
     {
         name: 'data',
-        alias: ['d', 'data', 'data-raw'],
+        alias: ['d', 'data', 'data-raw', 'data-urlencode', 'data-binary'],
         description: '<data> Send specified data in POST request. Details provided below.',
         convertor: convertor.body,
     },
