@@ -1,15 +1,5 @@
 
 # curl-to-json
-
-## Feature
-- [X] Mapping curl string to json
-- [X] Support mapping header, params, body-raw
-- [X] Form -F, --form
-- [X] Binary data --data-binary
-- [X] Urlencode data --data-urlencode
-## TODO
-Mapping list case
-- [ ] Range -r, --range
 ## Install
 ```
 npm i @bany/curl-to-json
@@ -26,7 +16,7 @@ var out = parse(`your_curl`);
 ```js
 const parse = require('@bany/curl-to-json');
 
-var out = parse(`curl -X --request GET 'http://localhost:3001/search?search=react&asdfa=asfdaf' \
+var out = parse(`curl -X GET 'http://localhost:3001/search?search=react&asdfa=asfdaf' \
 --header 'xapi-key: 21432139847290402402190' \
 --header 'Content-Type: text/html' \
 --data-raw '{
@@ -51,6 +41,9 @@ console.log(out)
 } */
 ```
 
+## CURL Example
+- [Check this gist](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
+- Accept curl from Postman.
 ## Contributing
 
 If you want to colaborate check the project's issues.
