@@ -14,7 +14,7 @@ module.exports = exports.default = function (data) {
 	
 	options.forEach(element => {
 		let alias = element.alias
-		let value = argv[alias[0]] || argv[alias[1]] || argv[alias[2]]
+		let value = alias.map(element => argv[element]).filter(element => element)[0]
 		if (value) {
 			if (element.convertor) {
 				result[element.name] = element.convertor(value)

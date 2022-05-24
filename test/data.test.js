@@ -246,5 +246,34 @@ module.exports = [
     {
         curl: `curl -d "@data.json" -X POST http://localhost:3000/data`
     },
+    {
+        curl: `curl -X GET 'http://localhost:3001/search?search=react&asdfa=asfdaf' \
+        --header 'xapi-key: 21432139847290402402190' \
+        --header 'Content-Type: text/html' \
+        --data-raw '{
+            "name": "string",
+            "name2": "string"
+        }'`
+    },
+    {
+        curl: `curl --location --request GET 'https://example.com/posts?a=2&b=44' \
+        --header 'Content-Type: value' \
+        --header 'Authorization: token' \
+        --form 'title="file_avatar"' \
+        --form 'file=@"/Users/bany/Desktop/Screen Shot 2022-05-22 at 22.55.22.png"' `
+    },
+    {
+        curl: `curl --location --request GET 'https://example.com/posts?a=2&b=44' \
+        --header 'Content-Type: application/x-www-form-urlencoded' \
+        --header 'Authorization: token' \
+        --data-urlencode 'title=title' \
+        --data-urlencode 'file=/path/file' `
+    },
+    {
+        curl: `curl --location --request GET 'https://example.com/posts?a=2&b=44' \
+        --header 'Content-Type: value' \
+        --header 'Authorization: token' \
+        --data-binary '@/Users/bany/Desktop/Screen Shot 2022-05-22 at 22.55.22.png' `
+    }
     
 ]
