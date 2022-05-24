@@ -41,6 +41,9 @@ console.log(out)
 } */
 ```
 
+## CURL Example
+- [Check this gist](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
+- Accept curl from Postman.
 ## Contributing
 
 If you want to colaborate check the project's issues.
