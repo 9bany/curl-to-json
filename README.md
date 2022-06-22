@@ -23,11 +23,9 @@ var out = parse(`curl -X GET 'http://localhost:3001/search?search=react&asdfa=as
     "name": "string",
     "name2": "string"
 }'`);
-
 console.log(out)
 
 /**
- * OUTPUT:
  {
   method: 'GET',
   header: {
@@ -41,7 +39,7 @@ console.log(out)
 } */
 ```
 
-## CURL Example
+## CURL
 - [Check this gist](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
 - Accept curl from Postman.
 ## Contributing
