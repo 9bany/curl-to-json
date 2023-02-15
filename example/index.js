@@ -1,4 +1,4 @@
-const parse = require('@bany/curl-to-json');
+const parse = require('../src/pare-json');
 
 var out = parse(`curl -X GET 'http://localhost:3001/search?search=react&asdfa=asfdaf' \
 --header 'xapi-key: 21432139847290402402190' \
@@ -18,7 +18,7 @@ console.log(out)
     'xapi-key': '21432139847290402402190',
     'Content-Type': 'text/html'
   },
-  url: 'http://localhost:3001/search?search=react&asdfa=asfdaf',
+  url: 'http://localhost:3001/search',
   origin: 'http://localhost:3001',
   params: { search: 'react', asdfa: 'asfdaf' },
   body: { name: 'string', name2: 'string' }
