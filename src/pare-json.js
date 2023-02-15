@@ -9,7 +9,7 @@ module.exports = exports.default = function (data) {
 	let result = {}
 
 	if (argv._[1]) {
-		result.url = argv._[1].replace(/'/, '')
+		result.url = argv._[1].replace(/'/g, '')
 	}
 	
 	options.forEach(element => {
