@@ -3,7 +3,7 @@ type AnyObj = Record<string, string>;
 type Method = 'OPTIONS' | 'PUT' | 'PATCH' | 'DELETE' | 'TRACE' | 'CONNECT'
   | 'options' | 'put' | 'patch' | 'delete' | 'trace' | 'connect';
 
-interface ResultJSON {
+export declare interface ResultJSON {
   url: string;
   origin: string;
   header?: AnyObj;
