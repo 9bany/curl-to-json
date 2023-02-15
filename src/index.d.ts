@@ -1,7 +1,16 @@
 type AnyObj = Record<string, string>;
 
-type Method = 'OPTIONS' | 'PUT' | 'PATCH' | 'DELETE' | 'TRACE' | 'CONNECT'
-  | 'options' | 'put' | 'patch' | 'delete' | 'trace' | 'connect';
+type Method =
+  | 'get' | 'GET'
+  | 'delete' | 'DELETE'
+  | 'head' | 'HEAD'
+  | 'options' | 'OPTIONS'
+  | 'post' | 'POST'
+  | 'put' | 'PUT'
+  | 'patch' | 'PATCH'
+  | 'purge' | 'PURGE'
+  | 'link' | 'LINK'
+  | 'unlink' | 'UNLINK';
 
 export declare interface ResultJSON {
   url: string;
@@ -9,7 +18,7 @@ export declare interface ResultJSON {
   header?: AnyObj;
   data?: any;
   params?: AnyObj;
-  method?: Method;
+  method?: Method | (string & {});
   [k in string]?: any;
 }
 
