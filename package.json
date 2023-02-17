@@ -3,6 +3,7 @@
   "version": "1.2.2",
   "description": "Convert curl format to json",
   "main": "src/pare-json.js",
+  "typings": "src/index.d.ts",
   "scripts": {
     "test": "mocha"
   },

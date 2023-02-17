@@ -9,7 +9,7 @@ module.exports = exports.default = function (data) {
 	let result = {}
 
 	if (argv._[1]) {
-		result.url = argv._[1].replace(/'/, '')
+		result.url = argv._[1].replace(/'/g, '')
 	}
 	
 	options.forEach(element => {
@@ -26,9 +26,9 @@ module.exports = exports.default = function (data) {
 
 	if (result.url) {
 		let url = new URL(result.url);
-		result.url = url.origin
+		result.url = url.origin + url.pathname;
 		let params = new URLSearchParams(url.search);
-		if(params) {
+		if(Object.keys(params).length) {
 			result.params = convertor.parseParamsField(params.toString());
 		}
 	}

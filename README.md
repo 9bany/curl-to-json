@@ -32,7 +32,7 @@ console.log(out)
     'xapi-key': '21432139847290402402190',
     'Content-Type': 'text/html'
   },
-  url: 'http://localhost:3001/search?search=react&asdfa=asfdaf',
+  url: 'http://localhost:3001/search',
   origin: 'http://localhost:3001',
   params: { search: 'react', asdfa: 'asfdaf' },
   body: { name: 'string', name2: 'string' }
