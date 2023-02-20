@@ -32,6 +32,11 @@ module.exports = exports.default = function (data) {
 			result.params = convertor.parseParamsField(params.toString());
 		}
 	}
+
+	if (!result.method) {
+		// When there is a "data" parameter, the default is "post" request mode
+		result.method = result.data ? 'POST' : 'GET';
+	}
 	
 	return result
 }
