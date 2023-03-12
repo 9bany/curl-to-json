@@ -47,10 +47,9 @@ console.log(out)
 If you want to colaborate check the project's issues.
 
 1. Fork the repository
-2. Create a new branch
-3. Implement your solution
-4. Commit
-5. Open a Pull Request
+2. Implement your solution
+3. Commit
+4. Open a Pull Request
 
 Thanks!
 
