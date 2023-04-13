@@ -28,7 +28,7 @@ module.exports = exports.default = function (data) {
 		let url = new URL(result.url);
 		result.url = url.origin + url.pathname;
 		let params = new URLSearchParams(url.search);
-		if(Object.keys(params).length) {
+		if(Array.from(params).length) {
 			result.params = convertor.parseParamsField(params.toString());
 		}
 	}
