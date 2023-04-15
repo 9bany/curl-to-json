@@ -1,10 +1,16 @@
-const yargs = require('yargs/yargs');
+const minimistParser = require('minimist');
 const convertor = require('./convertor');
 
 const options = require('./option');
 
 module.exports = exports.default = function (data) {
-	const argv = yargs(data).argv
+	if (typeof data === 'string' || data instanceof String) {
+		data = data
+			.replace(/\\\n/g, ' ')
+			.match(/"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)'|[^\s]+/g)
+			.map((s) => s.replace(/('|")/g, ''))
+	}
+	const argv = minimistParser(data)
 
 	let result = {}
 
