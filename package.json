@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/9bany/curl-to-json#readme",
   "dependencies": {
-    "mocha": "^10.0.0",
-    "yargs": "^17.5.1"
+    "minimist": "^1.2.8"
   }
 }
