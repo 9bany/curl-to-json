@@ -126,4 +126,20 @@ module.exports = [
         description: 'The request method to use.',
         convertor: null,
     },
+
+    // -A, --user-agent <name>
+    {
+        name: 'user-agent',
+        alias: ['A', 'user-agent'],
+        description: 'Specify the User-Agent send to the HTTP server.',
+        convertor: null,
+    },
+
+    // -e, --referer <URL>
+    {
+        name: 'referer',
+        alias: ['e', 'referer'],
+        description: 'Sends the "Referrer Page" information to the HTTP server.',
+        convertor: null,
+    },
 ]
