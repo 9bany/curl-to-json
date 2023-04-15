@@ -81,7 +81,7 @@ module.exports = [
 
     // -o, --output <file> Write output to . Can use --create-dirs in conjunction with this to create any directories specified in the -o path.
     {
-        name: '',
+        name: 'output',
         alias: ['o', 'output'],
         description: '<file> Write output to . Can use --create-dirs in conjunction with this to create any directories specified in the -o path.',
         convertor: null,
