@@ -2,19 +2,13 @@ const minimistParser = require('minimist');
 const convertor = require('./convertor');
 
 const options = require('./option');
+const matcher = require('./matcher')
 
 module.exports = exports.default = function (data) {
 	if (typeof data === 'string' || data instanceof String) {
-		data = data
-			.replace(/\\\n/g, ' ')
-			.match(/"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)'|[^\s]+/g)
-			.map((s) => {
-				if ((s.startsWith(`'`) && s.endsWith(`'`)) || (s.startsWith(`"`) && s.endsWith(`"`))) {
-					return s.substring(1, s.length - 1);
-				} else {
-					return s;
-				}
-			})
+		// minimistParser cannot parse from string
+		// parse string to argvs array for minimistParser
+		data = matcher.matchArgv(data)
 	}
 	const argv = minimistParser(data)
 
