@@ -1,10 +1,16 @@
-const yargs = require('yargs/yargs');
+const minimistParser = require('minimist');
 const convertor = require('./convertor');
 
 const options = require('./option');
+const matcher = require('./matcher')
 
 module.exports = exports.default = function (data) {
-	const argv = yargs(data).argv
+	if (typeof data === 'string' || data instanceof String) {
+		// minimistParser cannot parse from string
+		// parse string to argvs array for minimistParser
+		data = matcher.matchArgv(data)
+	}
+	const argv = minimistParser(data)
 
 	let result = {}
 

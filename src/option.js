@@ -81,7 +81,7 @@ module.exports = [
 
     // -o, --output <file> Write output to . Can use --create-dirs in conjunction with this to create any directories specified in the -o path.
     {
-        name: '',
+        name: 'output',
         alias: ['o', 'output'],
         description: '<file> Write output to . Can use --create-dirs in conjunction with this to create any directories specified in the -o path.',
         convertor: null,
@@ -124,6 +124,22 @@ module.exports = [
         name: 'method',
         alias: ['X', 'request'],
         description: 'The request method to use.',
+        convertor: null,
+    },
+
+    // -A, --user-agent <name>
+    {
+        name: 'user-agent',
+        alias: ['A', 'user-agent'],
+        description: 'Specify the User-Agent send to the HTTP server.',
+        convertor: null,
+    },
+
+    // -e, --referer <URL>
+    {
+        name: 'referer',
+        alias: ['e', 'referer'],
+        description: 'Sends the "Referrer Page" information to the HTTP server.',
         convertor: null,
     },
 ]
