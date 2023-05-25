@@ -1,5 +1,6 @@
 
 # curl-to-json
+Conver curl to json format.
 ## Install
 ```
 npm i @bany/curl-to-json
@@ -43,6 +44,8 @@ console.log(out)
 - [Check this gist](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
 - Accept curl from Postman.
 ## Contributing
+
+Welcome new issue or feature request.
 
 If you want to colaborate check the project's issues.
 
