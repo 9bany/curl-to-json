@@ -274,6 +274,11 @@ module.exports = [
         --header 'Content-Type: value' \
         --header 'Authorization: token' \
         --data-binary '@/Users/bany/Desktop/Screen Shot 2022-05-22 at 22.55.22.png' `
+    },
+    {
+        curl: `curl --location --request GET 'https://example.com/posts?a=2&b=44' \
+        --header 'Content-Type:value' \
+        --header 'Authorization: token' \
+        --data-binary '@/Users/bany/Desktop/Screen Shot 2022-05-22 at 22.55.22.png' `
     }
-    
 ]
