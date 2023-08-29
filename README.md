@@ -1,6 +1,6 @@
 
 # curl-to-json
-Conver curl to json format.
+[@bany/curl-to-json](https://www.npmjs.com/package/@bany/curl-to-json) Conver curl to json format. 
 ## Install
 ```
 npm i @bany/curl-to-json
