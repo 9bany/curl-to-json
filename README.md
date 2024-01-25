@@ -40,12 +40,7 @@ console.log(out)
 } */
 ```
 
-## Projects using curl-to-json
-| Project                                                   | Description                                                                                                                                                       | Stars                                                                                               |
-|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| [Motrix](https://github.com/agalwood/Motrix) | A full-featured download manager. | ![GitHub Repo stars](https://img.shields.io/github/stars/agalwood/Motrix?style=flat-square) |
-
-## CURL
+## CURL Convention
 - [Check this gist](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
 - Accept curl from Postman.
 ## Contributing
