@@ -142,4 +142,12 @@ module.exports = [
         description: 'Sends the "Referrer Page" information to the HTTP server.',
         convertor: null,
     },
+
+    // -u, --user username[:password]
+    {
+        name: 'user',
+        alias: ['u', 'user'],
+        description: 'Sends the "Authorization Basic" header to the HTTP server.',
+        convertor: null,
+    },
 ]
