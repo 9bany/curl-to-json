@@ -17,7 +17,11 @@ export declare interface ResultJSON {
   origin: string;
   header?: AnyObj;
   data?: any;
+  // -L/--location follow redirects (boolean flag)
+  location?: boolean;
   params?: AnyObj;
+  // -F/--form is normalized to an array (even for single occurrence)
+  form?: string[];
   method?: Method | (string & {});
   [k in string]?: any;
 }
