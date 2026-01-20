@@ -46,6 +46,15 @@ module.exports = {
         }
         return ouput
     },
+    /**
+     * Normalize -F/--form output.
+     * minimist returns string for a single occurrence and array for multiple.
+     */
+    form: (data) => {
+        if (data == null) return data
+        if ((typeof data) === "string") return [data]
+        return data
+    },
     body: (data) => {
         
         if ((typeof data) === "string") {
