@@ -37,7 +37,7 @@ module.exports = [
         name: 'form',
         alias: ['F', 'form'],
         description: '<name=content> Submit form data.',
-        convertor: null,
+        convertor: convertor.form,
     },
     // -H, --header <header> Headers to supply with request.
     {

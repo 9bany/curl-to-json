@@ -10,7 +10,21 @@ module.exports = exports.default = function (data) {
 		// parse string to argvs array for minimistParser
 		data = matcher.matchArgv(data)
 	}
-	const argv = minimistParser(data)
+	// minimist will treat `--flag value` as "flag has a value" unless configured as boolean.
+	// For curl, many flags are boolean (e.g. `--location`) and may be followed immediately by the URL.
+	// Without this, `--location https://...` incorrectly consumes the URL as the value for `location`.
+	const argv = minimistParser(data, {
+		boolean: [
+			'f', 'fail',
+			'i', 'include',
+			'I', 'head',
+			'k', 'insecure',
+			'L', 'location',
+			'O', 'remote-name',
+			's', 'silent',
+			'v', 'verbose',
+		],
+	})
 
 	let result = {}
 
@@ -40,8 +54,8 @@ module.exports = exports.default = function (data) {
 	}
 
 	if (!result.method) {
-		// When there is a "data" parameter, the default is "post" request mode
-		result.method = result.data ? 'POST' : 'GET';
+		// When there is a body payload (e.g. -d/--data or -F/--form), default to POST.
+		result.method = (result.data || result.form) ? 'POST' : 'GET';
 	}
 	
 	return result
